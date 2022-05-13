@@ -4,7 +4,7 @@ import privado from "../../assets/images/privado.svg";
 import olho_icone from "../../assets/images/olho.svg";
 import dinheiro from "../../assets/images/dinheiro.svg";
 
-import { Box, Icone } from "../UI";
+import { Botao, Box, Detalhe, Icone, Saldo } from "../UI";
 
 import styled from "styled-components";
 
@@ -24,22 +24,22 @@ const Conta = () => {
       <h2>Conta</h2>
       <div style={{ fontSize: "26px", padding: "20px 0" }}>
         Saldo disponível{" "}
-        <span>
+        <Detalhe>
           <Icone src={dinheiro} alt="Ícone Saldo" />
-        </span>
+        </Detalhe>
         {toggleState ? (
-          <div className="saldo">
-            <span className="detalhe">R$</span> 0,00{" "}
-          </div>
+          <Saldo>
+            <Detalhe>R$</Detalhe> 0,00{" "}
+          </Saldo>
         ) : null}
       </div>
 
-      <button className="btn" onClick={toggleHandler}>
+      <Botao onClick={toggleHandler}>
         <IconeMargin
           src={toggleState ? privado : olho_icone}
           alt="Privacidade do Saldo"
         />
-      </button>
+      </Botao>
     </Box>
   );
 };
