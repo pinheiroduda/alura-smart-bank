@@ -1,8 +1,10 @@
 import React from "react";
 
+import Item from "../Item";
+
 import styled from "styled-components";
 
-export const Items = styled.div`
+const Itens = styled.div`
   box-shadow: 4px 4x 20px 0px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 2px 0;
@@ -13,6 +15,11 @@ export const Items = styled.div`
   font-size: 12px;
 `;
 
-export default () => {
-  return <Items></Items>;
+export default (props) => {
+  return (
+    <Itens>
+      <Item {...props} />
+      <span>{props.date}</span>
+    </Itens>
+  );
 };
